@@ -12,6 +12,7 @@ import java.util.List;
 public class CourseServiceImpl implements CourseService {
     @Resource
     private CourseMapper courseMapper;
+
     @Override
     public List<Course> selectAll() {
         return courseMapper.selectAll();
@@ -25,5 +26,15 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public void delete(long courseId) {
         courseMapper.delete(courseId);
+    }
+
+    @Override
+    public void insert(Course course) {
+        courseMapper.insert(course);
+    }
+
+    @Override
+    public void update(Course course) {
+        courseMapper.update(course);
     }
 }
